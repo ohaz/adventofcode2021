@@ -18,12 +18,13 @@ def get_example_input():
 
 def get_input():
     with open('solutions/day3/input.txt') as f:
-        return [x for x in f.readlines()]
+        return [x.strip() for x in f.readlines()]
+
 
 def task1():
     inp = get_input()
 
-    sums = [0 for _ in range(len(inp[0]) - 1)]
+    sums = [0 for _ in range(len(inp[0]))]
     for line in inp:
         for index, value in enumerate(line):
             if value == "1":
