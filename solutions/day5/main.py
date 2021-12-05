@@ -29,15 +29,13 @@ def generate_line(x1, y1, x2, y2, ignore_diagonal=True):
         x_diffs = []
         y_diffs = []
         for x_diff in range(min(x1, x2), max(x1, x2) + 1):
-            if x1 < x2:
-                x_diffs.append(x_diff)
-            else:
-                x_diffs.insert(0, x_diff)
+            x_diffs.append(x_diff)
         for y_diff in range(min(y1, y2), max(y1, y2) + 1):
-            if y1 < y2:
-                y_diffs.append(y_diff)
-            else:
-                y_diffs.insert(0, y_diff)
+            y_diffs.append(y_diff)
+        if x1 > x2:
+            x_diffs = x_diffs[::-1]
+        if y1 > y2:
+            y_diffs = y_diffs[::-1]
         results = list(zip(x_diffs, y_diffs))
         return results
 
