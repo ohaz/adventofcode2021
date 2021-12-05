@@ -25,7 +25,6 @@ def generate_line(x1, y1, x2, y2, ignore_diagonal=True):
     if ignore_diagonal and not ((x1 == x2) or (y1 == y2)):
         return []
     elif not ignore_diagonal and not ((x1 == x2) or (y1 == y2)):
-        y_diff = y1
         x_diffs = []
         y_diffs = []
         for x_diff in range(min(x1, x2), max(x1, x2) + 1):
