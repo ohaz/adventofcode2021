@@ -48,24 +48,19 @@ def generate_line(x1, y1, x2, y2, ignore_diagonal=True):
     else:
         return [(x, y1) for x in range(x1, x2 + 1)]
 
-def task1():
+def calculate(with_diagonals):
     pipes = [PARSER.match(x) for x in get_input()]
     points = defaultdict(int)
     for pipe in pipes:
         x1,y1 = int(pipe.group('x1')), int(pipe.group('y1'))
         x2,y2 = int(pipe.group('x2')), int(pipe.group('y2'))
-        line = generate_line(x1, y1, x2, y2, True)
+        line = generate_line(x1, y1, x2, y2, not with_diagonals)
         for entry in line:
             points[entry] += 1
     return sum(i >= 2 for i in points.values())
 
+def task1():
+    return calculate(False)
+
 def task2():
-    pipes = [PARSER.match(x) for x in get_input()]
-    points = defaultdict(int)
-    for pipe in pipes:
-        x1,y1 = int(pipe.group('x1')), int(pipe.group('y1'))
-        x2,y2 = int(pipe.group('x2')), int(pipe.group('y2'))
-        line = generate_line(x1, y1, x2, y2, False)
-        for entry in line:
-            points[entry] += 1
-    return sum(i >= 2 for i in points.values())
+    return calculate(True)
