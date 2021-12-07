@@ -26,6 +26,6 @@ def task2():
     for pos in range(min(crabs), max(crabs) + 1):
         fuel_cost = 0
         for crab in crabs:
-            fuel_cost += sum(range(abs(crab - pos) + 1))
+            fuel_cost += int(abs(crab - pos) * (abs(crab - pos) + 1) / 2)
         best_fuel_cost = min(best_fuel_cost, fuel_cost)
     return best_fuel_cost
