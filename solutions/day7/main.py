@@ -1,4 +1,5 @@
 import os
+import sys
 
 def get_example_input():
     s = """16,1,2,0,4,2,7,1,2,14"""
@@ -10,7 +11,7 @@ def get_input():
 
 def task1():
     crabs = [int(x) for x in get_input()[0].split(',')]
-    best_fuel_cost = 999999999999
+    best_fuel_cost = sys.maxsize
     for pos in range(min(crabs), max(crabs) + 1):
         fuel_cost = 0
         for crab in crabs:
@@ -21,7 +22,7 @@ def task1():
 
 def task2():
     crabs = [int(x) for x in get_input()[0].split(',')]
-    best_fuel_cost = 999999999999
+    best_fuel_cost = sys.maxsize
     for pos in range(min(crabs), max(crabs) + 1):
         fuel_cost = 0
         for crab in crabs:
