@@ -16,7 +16,7 @@ gcafb gcf dcaebfg ecagb gf abcdeg gaef cafbge fdbac fegbdc | fgae cfgab fg bagce
 
 segments = {
     'cf': 1,
-    'abcdefg': 0,
+    'abcefg': 0,
     'acdeg': 2,
     'acdfg': 3,
     'bcdf': 4,
