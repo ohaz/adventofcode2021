@@ -74,5 +74,5 @@ def task2():
                 if is_valid_neighbour(world, _x, _y):
                     graph.add_edge((x, y), (_x, _y), weight=world[_x][_y])
                     graph.add_edge((_x, _y), (x, y), weight=world[x][y])
-        
+
     return networkx.shortest_path_length(graph, source=(0,0), target=(len(world[0]) -1, len(world) - 1), weight='weight')
